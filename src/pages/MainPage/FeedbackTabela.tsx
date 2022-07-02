@@ -18,20 +18,20 @@ class Feedback
     public avaliado:Pessoas = new Pessoas();
 }
 
-export default function FeedbacksTable() {
+export default function FeedbackTabela() {
   
   var nome:string
 
   const [data, dataSet] = useState<Feedback[]>([]);
 
   useEffect(() => {
-    var feedbacks:Feedback[] = [];
+    var feedback:Feedback[] = [];
     (async () => {
       const result = await getFeedback();
       if(result)
       {
-        Object.assign(feedbacks, result.data);
-        dataSet(feedbacks);
+        Object.assign(feedback, result.data);
+        dataSet(feedback);
       }
     })();
   }, []);
@@ -40,7 +40,7 @@ export default function FeedbacksTable() {
   return (
     <>
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="spanning table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>

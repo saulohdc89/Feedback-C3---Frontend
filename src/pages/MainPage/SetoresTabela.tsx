@@ -15,7 +15,7 @@ export class Setor
     public descricao:string = "";
 }
 
-export default function SetoresTable() {
+export default function SetoresTabela() {
   
   var nome:string
 
@@ -37,7 +37,7 @@ export default function SetoresTable() {
   return (
     <>
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="spanning table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>

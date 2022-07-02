@@ -17,7 +17,7 @@ export class Pessoas
     public setor:Setor = new Setor;
 }
 
-export default function PessoasTable() {
+export default function PessoasTabela() {
   
   var nome:string
 
@@ -40,7 +40,7 @@ export default function PessoasTable() {
   return (
     <>
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="spanning table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
