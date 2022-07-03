@@ -25,6 +25,7 @@ export default class FeedbackController {
 
     const feedback = await this.feedbackservice.get(Number(id));
     res.send(feedback).json();
+    return;
   };
 
   public create = async (req: Request, res: Response) => {
@@ -32,6 +33,7 @@ export default class FeedbackController {
 
     const newFeedback = await this.feedbackservice.create(feedback);
     res.send(newFeedback).json();
+    return;
   };
 
   public update = async (req: Request, res: Response) => {
@@ -40,6 +42,7 @@ export default class FeedbackController {
 
     const newFeedback = this.feedbackservice.Update(feedback, Number(id));
     res.send(newFeedback);
+    return;
   };
 
   public delete = async (req: Request, res: Response) => {
@@ -47,5 +50,6 @@ export default class FeedbackController {
 
     const feedback = this.feedbackservice.delete(Number(id));
     res.send(feedback);
+    return;
   };
 }

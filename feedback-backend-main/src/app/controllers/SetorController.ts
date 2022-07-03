@@ -1,36 +1,40 @@
 import { Request, Response } from 'express';
-import FuncaoModel from '../models/SetorModel';
-import FuncoesService from '../services/SetorService';
+import SetorModel from '../models/SetorModel';
+import SetorService from '../services/SetorService';
 
-export default class FuncoesController {
-  private funcoesService: FuncoesService;
+export default class SetorController {
+  private setorService: SetorService;
 
   constructor() {
-    this.funcoesService = new FuncoesService();
+    this.setorService = new SetorService();
   }
 
   public index = async (req: Request, res: Response) => {
-    const funcoes = await this.funcoesService.index();
+    const funcoes = await this.setorService.index();
     res.send(funcoes).json();
+    return;
   };
 
   public create = async (req: Request, res: Response) => {
-    const funcao = req.body as FuncaoModel;
+    const setor = req.body as SetorModel;
 
-    const novaFuncao = await this.funcoesService.create(funcao);
-    res.send(novaFuncao).json();
+    const novoSetor = await this.setorService.create(setor);
+    res.send(novoSetor).json();
+    return;
   };
 
   public update = async (req: Request, res:Response) => {
-    const funcao = req.body as FuncaoModel;
+    const funcao = req.body as SetorModel;
     const { id } = req.params;
 
-    res.send(this.funcoesService.update(funcao, Number(id)));
+    res.send(this.setorService.update(funcao, Number(id)));
+    return;
   };
 
   public delete = async (req: Request, res: Response) => {
     const { id } = req.params;
 
-    res.send(this.funcoesService.delete(Number(id)));
+    res.send(this.setorService.delete(Number(id)));
+    return;
   };
 }
