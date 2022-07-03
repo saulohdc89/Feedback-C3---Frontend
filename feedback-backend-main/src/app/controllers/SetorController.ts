@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import FuncaoModel from '../models/FuncaoModel';
-import FuncoesService from '../services/FuncoesService';
+import FuncaoModel from '../models/SetorModel';
+import FuncoesService from '../services/SetorService';
 
 export default class FuncoesController {
   private funcoesService: FuncoesService;

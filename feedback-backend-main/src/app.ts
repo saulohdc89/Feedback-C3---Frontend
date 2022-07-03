@@ -5,11 +5,10 @@ import express, {
 } from 'express';
 
 import { config } from 'dotenv';
-import ColaboradoresRouter from './app/routes/ColaboradoresRoutes';
+import PessoasRouter from './app/routes/PessoasRoutes';
 import initializeDB from './database';
-import EmpresasRouter from './app/routes/EmpresaRoutes';
-import AreasRouter from './app/routes/AreaRoutes';
-import FuncoesRouter from './app/routes/FuncaoRoutes';
+import feedbackRouter from './app/routes/FeedbackRoutes';
+import SetorRouter from './app/routes/SetorRoutes';
 
 const log = debug('feedback-api:app');
 
@@ -41,10 +40,9 @@ class App {
   }
 
   public routes() {
-    this.express.use('/colaboradores', ColaboradoresRouter);
-    this.express.use('/empresas', EmpresasRouter);
-    this.express.use('/areas', AreasRouter);
-    this.express.use('/funcoes', FuncoesRouter);
+    this.express.use('/pessoas', PessoasRouter);
+    this.express.use('/feedback', feedbackRouter);
+    this.express.use('/setor', SetorRouter);
   }
 }
 

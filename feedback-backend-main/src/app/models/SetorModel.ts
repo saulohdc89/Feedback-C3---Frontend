@@ -2,11 +2,11 @@ import {
   Entity, PrimaryGeneratedColumn, Column, OneToMany,
 } from 'typeorm';
 
-import ColaboradoresModel from './ColaboradoresModel';
+import PessoasModel from './PessoasModel';
 
 @Entity()
 
-export default class FuncaoModel {
+export default class SetorModel {
   @PrimaryGeneratedColumn()
     id: number;
 
@@ -16,6 +16,6 @@ export default class FuncaoModel {
     @Column()
       descricao: string;
 
-    @OneToMany(() => ColaboradoresModel, (colaborador) => colaborador.funcao)
-      colaboradores: ColaboradoresModel[];
+    @OneToMany(() => PessoasModel, (pessoa) => pessoa.setor)
+      pessoas: PessoasModel[];
 }

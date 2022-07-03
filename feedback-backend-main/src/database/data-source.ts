@@ -1,24 +1,18 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import FeedbackModel from '../app/models/FeedbackModel';
-import SessoesModel from '../app/models/SessoesModel';
-import ColaboradoresModel from '../app/models/ColaboradoresModel';
-import FuncaoModel from '../app/models/FuncaoModel';
-import AreasModel from '../app/models/AreasModel';
-import EmpresaModel from '../app/models/EmpresasModel';
+import PessoasModel from '../app/models/PessoasModel';
+import SetorModel from '../app/models/SetorModel';
 
 export default new DataSource({
   type: 'sqlite',
-  database: 'sqlite.db',
+  database: './src/database/database.db',
   synchronize: true,
   logging: false,
   entities: [
-    ColaboradoresModel,
-    SessoesModel,
-    FuncaoModel,
+    PessoasModel,
+    SetorModel,
     FeedbackModel,
-    AreasModel,
-    EmpresaModel,
   ],
   migrations: [],
   subscribers: [],

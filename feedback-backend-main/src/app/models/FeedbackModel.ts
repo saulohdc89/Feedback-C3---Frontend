@@ -2,20 +2,23 @@ import {
   Entity, PrimaryGeneratedColumn, Column, ManyToOne,
 } from 'typeorm';
 
-import ColaboradoresModel from './ColaboradoresModel';
+import PessoasModel from './PessoasModel';
 
-@Entity()
+  @Entity()
 
 export default class FeedbackModel {
-  @PrimaryGeneratedColumn()
-    id: number;
+      @PrimaryGeneratedColumn()
+        id: number;
 
-    @Column()
-      nota: number;
+      @Column()
+        titulo: string;
 
-    @Column()
-      comentario: string;
+      @Column()
+        nivel: number;
 
-    @ManyToOne(() => ColaboradoresModel, (colaborador) => colaborador.feedbacks)
-      colaborador: ColaboradoresModel;
+      @Column()
+        texto: string;
+
+      @ManyToOne(() => PessoasModel, (avaliado) => avaliado.feedback)
+        avaliado: PessoasModel;
 }
